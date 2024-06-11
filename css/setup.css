@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    height: 2000px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Agregado para cambiar la fuente */
+    background: linear-gradient(to bottom right, #031625, #590f72);
+    color: #fff;
+}
+
+.container {
+    max-width: 75vw;
+    margin: 0 auto;
+    padding: 0 2vw;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.header-social a {
+    color: #fff;
+    margin: 0 1vw;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.header-social a:hover {
+    color: #aaa;
+}
+
+.header-nav {
+    text-align: center;
+}
+
+.header-nav a {
+    color: #fff;
+    margin: 0 1.5vw;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.header-nav a:hover {
+    color: #aaa;
+}
+
+.main-content {
+    padding-top: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px #000; /* Sombreado profundo agregado a la tipografía */
+}
+
+.component-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.component-item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 0.2rem solid #333;
+    border-radius: 1rem;
+    padding: 1.3rem; /* Reducido en un 30% */
+    width: calc(30% - 2rem); /* Reducido en un 30% */
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Mejora adicional */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones para efectos de hover */
+}
+
+.component-item img {
+    max-width: 70%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.component-item p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.component-item:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Brillo exterior dorado */
+    border-color: #ffd700; /* Borde metálico dorado */
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .component-item {
+        width: calc(50% - 4rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .component-item {
+        width: calc(100% - 4rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .header-nav a {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    .component-item {
+        width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .header-social {
+        flex-wrap: wrap;
+    }
+
+    .header-social a {
+        margin: 0.5rem;
+    }
+}

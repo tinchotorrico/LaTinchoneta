@@ -1,0 +1,72 @@
+/* Estilos del header */
+header {
+  background-color: black;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrar horizontalmente */
+  padding: 0 20px;
+}
+
+/* Contenedor de los textos del header */
+.header-texts {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Estilos para los textos del header */
+.header-text {
+  font-size: 1.25rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.header-text:hover {
+  color: #ff9900;
+}
+
+/* Estilos para los dropdown */
+.dropdown, .dropdowns {
+  position: relative;
+}
+
+/* Estilos para los submenus */
+.submenu, .submenus {
+  display: none;
+  position: absolute;
+  top: 100%; /* Desplazar justo debajo del enlace */
+  left: 0; /* Alinear con el enlace */
+  background-color: #b8b8b8;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  transition: opacity 0.2s ease;
+  opacity: 0; /* Para la animación de desvanecimiento */
+  z-index: 998;
+}
+
+.submenu a, .submenus a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 5px 20px;
+  transition: background-color 0.01s ease;
+}
+
+.submenu a:hover, .submenus a:hover {
+  color: white;
+  background-color: black;
+}
+
+/* Mostrar el submenu al pasar el cursor */
+.dropdown:hover .submenu, .dropdowns:hover .submenus {
+  display: block;
+  opacity: 1; /* Para la animación de desvanecimiento */
+}

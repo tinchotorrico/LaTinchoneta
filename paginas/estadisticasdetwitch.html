@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas_de_Transmisiones</title>
+    <link rel="icon" href="../Imagenes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/estilosbase.css">
+    <link rel="stylesheet" href="../css/menudesplegable.css">
+    <link rel="stylesheet" href="../css/redes.css">
+    <link rel="stylesheet" href="../css/estadisticasdetwitch.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2087795218762804"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="redes">
+            <a href="https://discord.gg/V4ZBWY5N"><i id="discord" class="fa-brands fa-discord fa-fade"></i></a>
+            <a href="https://www.instagram.com/tinchotorrico/"><i id="instagram" class="fa-brands fa-instagram fa-fade"></i></a>
+            <a href="https://www.twitch.tv/tinchotorrico"><i id="twich" class="fa-brands fa-twitch fa-fade"></i></a>
+            <a href="https://www.youtube.com/channel/UChHXsD4BVqbGpW8EbKf603g"><i id="youtube" class="fa-brands fa-youtube fa-fade"></i></a>
+            <a href="https://www.tiktok.com/@tinchotorricook"><i id="tiktok" class="fa-brands fa-tiktok fa-fade"></i></a>
+        </div>
+        <nav class="header-texts">
+            <a href="../paginas/index.html" class="header-text">HOME</a>
+            <a href="../paginas/juegos.html" class="header-text">JUEGOS</a>
+            <div class="dropdown">
+                <a href="../paginas/comunidad.html" class="header-text">COMUNIDAD</a>
+                <div class="submenu">
+                    <a href="../paginas/Cromos.html">Cromos</a>
+                    <a href="../paginas/Ruleta.html">Ruleta</a>
+                    <a href="../paginas/Salon_de_la_fama.html">Salon de la Fama</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="../paginas/Tincho.html" class="header-text">TINCHO</a>
+                <div class="submenu">
+                    <a href="../paginas/estadisticasdetwitch.html">Estadisticas de Transmisiones</a>
+                    <a href="../paginas/Novedades.html">Novedades</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="informaciontwitch"></div>
+        <div class="tituloTwitch"><p>Twitch</p></div>
+    <div class="informaciontwitch2"></div>
+        <div class="subtituloTwitch"><p>Ultima Actualización: 11/06/2024</p></div>
+
+    <div class="resumentwitch" id="twitch-stats">
+            Cargando estadísticas de Twitch...
+    </div>
+    
+    <script>
+            async function fetchTwitchStats() {
+                try {
+                    const response = await fetch('/api/twitch-stats');
+                    const data = await response.json();
+    
+                    const statsContainer = document.getElementById('twitch-stats');
+                    const lastUpdate = document.getElementById('last-update');
+    
+                    if (data.data && data.data.length > 0) {
+                        const stream = data.data[0];
+                        statsContainer.innerHTML = `
+                            <p>Título: ${stream.title}</p>
+                            <p>Espectadores: ${stream.viewer_count}</p>
+                            <p>Inicio: ${new Date(stream.started_at).toLocaleString()}</p>
+                        `;
+                        lastUpdate.innerText = new Date().toLocaleDateString();
+                    } else {
+                        statsContainer.innerHTML = '<p>No hay transmisiones en vivo.</p>';
+                        lastUpdate.innerText = 'N/A';
+                    }
+                } catch (error) {
+                    console.error('Error al obtener las estadísticas de Twitch:', error);
+                    const statsContainer = document.getElementById('twitch-stats');
+                    statsContainer.innerHTML = '<p>Error al cargar las estadísticas de Twitch.</p>';
+                }
+            }
+    
+            fetchTwitchStats();
+    </script>
+</body>
+</html>

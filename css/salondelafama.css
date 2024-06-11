@@ -1,0 +1,86 @@
+.background3 {
+    position: relative;
+    background: url("../Recursos/ranking/Salon de la Fama.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.ranking_block {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.podio1_ranking,
+.podio2_ranking,
+.podio3_ranking,
+.podio4_ranking,
+.podio5_ranking,
+.podio6_ranking,
+.podio7_ranking {
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.podio1_ranking { background-color: rgba(255, 209, 84, 0.9); width: 12%; }
+.podio2_ranking { background-color: rgba(224, 224, 224, 0.9); width: 16%; }
+.podio3_ranking { background-color: rgba(252, 217, 201, 0.9); width: 20%; }
+.podio4_ranking { width: 24%; }
+.podio5_ranking { width: 28%; }
+.podio6_ranking { width: 32%; }
+.podio7_ranking { width: 36%; }
+
+.top3ranking {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(30% - 80px); /* Ajuste de posición vertical para estar más arriba */
+    left: 50%;
+    transform: translate(-50%, -100%); /* Centra horizontalmente y ajusta verticalmente */
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: float 3s infinite alternate;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -105%); }
+    100% { transform: translate(-50%, -110%); }
+}
+
+@media (max-width: 768px) {
+    .podio1_ranking,
+    .podio2_ranking,
+    .podio3_ranking,
+    .podio4_ranking,
+    .podio5_ranking,
+    .podio6_ranking,
+    .podio7_ranking {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .top3ranking {
+        width: 0%;
+        height: auto;
+        top: 0%;
+    }
+}

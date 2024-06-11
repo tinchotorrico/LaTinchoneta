@@ -1,0 +1,60 @@
+header {
+    background-color: black;
+    height: 80px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Cambio aquí para centrar horizontalmente */
+    padding: 0 20px;
+}
+
+.header-texts {
+    margin-left: -60px;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Asegura que los elementos dentro del contenedor estén centrados */
+}
+
+.header-text {
+    font-size: 1.25rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-text:hover {
+    color: #ff9900;
+}
+
+.dropdown, .dropdowns {
+    position: relative;
+}
+
+.submenu, .submenus {
+    display: none;
+    position: absolute;
+    background-color: black;
+    padding: 10px;
+    top: 30px;
+    left: 0;
+    z-index: 998;
+}
+
+.dropdown:hover .submenu, .dropdowns:hover .submenus {
+    display: block;
+}
+
+.background-container {
+    content: '';
+    background: url('../Recursos/background1.png') no-repeat center top;;
+    background-size: cover;
+    position: absolute;
+    margin-top: 0px; /* Altura del header para empujar la imagen hacia abajo */
+    left: 0;
+    width: 100%;
+    height: calc(100%); /* Ajustar la altura restando la altura del header */
+    z-index: 1;
+}

@@ -1,0 +1,45 @@
+body {
+    color: black;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.wheel-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.pointer {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #FF0000;
+    position: absolute;
+    top: 50%;
+    left: 79%;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+#spin {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.list-container {
+    margin-top: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
